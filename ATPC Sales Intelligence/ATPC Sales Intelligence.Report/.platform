@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ATPC Sales Intelligence"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ae60e1a9-9cc8-4a3f-91fe-cad9b3f3bdef"
+  }
+}

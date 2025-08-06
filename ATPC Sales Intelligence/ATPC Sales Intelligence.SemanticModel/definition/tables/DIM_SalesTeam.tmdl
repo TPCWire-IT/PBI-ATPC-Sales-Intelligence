@@ -1,0 +1,40 @@
+table DIM_SalesTeam
+	lineageTag: 66d489be-ac82-44d2-bae4-b4f0a4a565a8
+
+	column SalesTeamKey
+		dataType: string
+		lineageTag: 31e6fa94-c6da-42a3-b185-4c6447429cb9
+		summarizeBy: none
+		sourceColumn: SalesTeamKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTeam
+		dataType: string
+		lineageTag: 2d37d9a5-a8d1-4ecb-b97c-400ecc509499
+		summarizeBy: none
+		sourceColumn: SalesTeam
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesGroup
+		dataType: string
+		lineageTag: 7f2f1e40-de3d-4e24-9ad5-6d40612f874f
+		summarizeBy: none
+		sourceColumn: SalesGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_SalesTeam = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_DIM_SalesTeam = Source{[Schema="MIMIR",Item="DIM_SalesTeam"]}[Data]
+				in
+				    MIMIR_DIM_SalesTeam
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

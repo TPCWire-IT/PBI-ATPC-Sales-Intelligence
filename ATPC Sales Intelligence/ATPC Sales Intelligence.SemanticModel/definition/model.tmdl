@@ -1,0 +1,66 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DIM_CustomerSoldTo","DIM_Date","DIM_Part","FACT_RecognizedOrders","DIM_Territory","DIM_Salesperson","DIM_PaymentTerms","DIM_CustomerBillTo","DIM_CustomerShipTo","FACT_Invoices","FACT_Budgets","DIM_SalesTeam","FACT_Backlog","FACT_BookBill","FACT_BPCForecasts","FACT_EnteredOrders","DIM_Industry"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.145.1602.0 (25.07)+10647c9fa319b5e39936cdb21328038c371d1fe4
+
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
+
+ref table DIM_CustomerSoldTo
+ref table DateTableTemplate_65afc166-66bd-4a11-b706-14f86f1fb43d
+ref table DIM_Part
+ref table FACT_RecognizedOrders
+ref table LocalDateTable_e7929540-98ab-4098-a8f8-606a5be013c4
+ref table LocalDateTable_8c9bca32-ef92-433f-b1aa-fb2c686e9f2d
+ref table LocalDateTable_c9d23351-2964-4671-b24d-9f8a37f3296f
+ref table DIM_Territory
+ref table DIM_Salesperson
+ref table LocalDateTable_748d0592-fe6e-4dbb-a15e-4044f6cc5605
+ref table LocalDateTable_90db98d6-bb34-4ee5-b915-9b70cb49da10
+ref table DIM_PaymentTerms
+ref table DIM_CustomerBillTo
+ref table DIM_CustomerShipTo
+ref table DIM_Date
+ref table FACT_Invoices
+ref table LocalDateTable_df08ad42-9757-4013-91f2-248bd779209b
+ref table LocalDateTable_542c536a-c73b-4979-a447-fb43242b6089
+ref table LocalDateTable_4bb5206a-e392-47f5-b075-cfe45c895e4d
+ref table LocalDateTable_c564dafe-72c6-4f47-8a98-33c0bd66adeb
+ref table LocalDateTable_bced04f8-f241-4682-b64d-76fb9cae808c
+ref table LocalDateTable_9b20731d-746b-408c-9a81-ca84a12878c4
+ref table FACT_Budgets
+ref table LocalDateTable_c3d26823-74df-42fa-89e3-85ee320b17e9
+ref table DIM_SalesTeam
+ref table FACT_Backlog
+ref table LocalDateTable_716789d2-2fd1-472a-8bc2-562e435c3d8c
+ref table LocalDateTable_ef6c2a4f-66d9-4eb6-94e6-ea6b6aebfc0b
+ref table 'All Calculations'
+ref table FACT_BookBill
+ref table LocalDateTable_f311f05e-3f38-4f49-a3b2-5974a6f14bf3
+ref table LocalDateTable_6a8c9fb5-043b-49e0-ac58-12d9c0989cc9
+ref table FACT_BPCForecasts
+ref table LocalDateTable_aea1cbf4-4fa3-4e93-936f-0f86c973b832
+ref table 'DatePeriodSlicer Sorted'
+ref table 'DatePeriodSlicer Sorted 2'
+ref table LocalDateTable_2ad6e745-1fad-40e8-bf59-541db4de62e5
+ref table FACT_EnteredOrders
+ref table LocalDateTable_5e12c932-6b36-455b-b947-4ba84df103da
+ref table LocalDateTable_6d8a960e-83f0-4b3f-8c78-c341b4359da2
+ref table LocalDateTable_920ece97-f24f-4cac-9f6f-d5696355fe97
+ref table LocalDateTable_63d44e05-6fa0-405e-944b-1cf87c40d046
+ref table LocalDateTable_d4ce7bc4-9db7-4466-b566-785dcc9c5eb1
+ref table DIM_Industry
+
+ref role Managers
+ref role 'Individual Contributors'
+
+ref cultureInfo en-US
+

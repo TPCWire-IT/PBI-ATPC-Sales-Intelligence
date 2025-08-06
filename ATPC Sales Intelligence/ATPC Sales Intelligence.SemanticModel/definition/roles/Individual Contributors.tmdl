@@ -1,0 +1,7 @@
+role 'Individual Contributors'
+	modelPermission: read
+
+	tablePermission DIM_Salesperson = [EmailAddress] == USERPRINCIPALNAME()
+
+	annotation PBI_Id = 60f76e79576e4c92ad09261f6bc9b05c
+

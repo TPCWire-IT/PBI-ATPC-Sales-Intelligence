@@ -1,0 +1,110 @@
+table DIM_PaymentTerms
+	lineageTag: 42f89ea0-6af7-47b4-bc65-14b76419c293
+
+	column PaymentTermsKey
+		dataType: string
+		lineageTag: 5cf86ed5-fd63-4d21-9ee9-8fab391a2c06
+		summarizeBy: none
+		sourceColumn: PaymentTermsKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a623ba5a-7247-4fe2-a408-3a5819e4820b
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: b195ae41-b084-46cb-95fd-6adae7098095
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column TermsCode
+		dataType: string
+		lineageTag: ee1d4191-8c94-45c2-925f-b787466f54b6
+		summarizeBy: none
+		sourceColumn: TermsCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: fcb94b8e-ecd6-477a-8258-cbbe95eeef2f
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumberOfPayments
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d191a68-deae-4661-a3bf-b34aeb3bbd88
+		summarizeBy: none
+		sourceColumn: NumberOfPayments
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumberOfDays
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f534b61-3461-48a3-8391-b48fcdcbdb3d
+		summarizeBy: none
+		sourceColumn: NumberOfDays
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscountType
+		dataType: string
+		lineageTag: 29b075c4-0178-47bc-a939-7f3add17e542
+		summarizeBy: none
+		sourceColumn: DiscountType
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartPayment
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d92fdd31-2eb8-46c5-a9ee-ea5ea3e007b0
+		summarizeBy: none
+		sourceColumn: PartPayment
+
+		annotation SummarizationSetBy = Automatic
+
+	column GlobalTerms
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dccee9f5-2614-4f20-acd2-e75556319f31
+		summarizeBy: none
+		sourceColumn: GlobalTerms
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSystemDefault
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 995a55aa-e61b-4070-9323-3174a235249c
+		summarizeBy: none
+		sourceColumn: IsSystemDefault
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_PaymentTerms = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_DIM_PaymentTerms = Source{[Schema="MIMIR",Item="DIM_PaymentTerms"]}[Data]
+				in
+				    MIMIR_DIM_PaymentTerms
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,311 @@
+table DIM_Date
+	lineageTag: e61d2e4b-ec61-4166-b7d3-57f4896b05bd
+	dataCategory: Time
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 34e97c67-afbd-43f1-9e3f-50242544302d
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: 3141da61-c57a-438b-8570-4a50c04ae84c
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 96a9a177-de10-442d-88ea-622eda3a256f
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column IsLeapYear
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8fb96f1c-2025-4e91-a1fa-48a0be8be83b
+		summarizeBy: none
+		sourceColumn: IsLeapYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: cd2ec37c-aad0-43eb-8778-5bdcfc2634a4
+		summarizeBy: sum
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterName
+		dataType: string
+		lineageTag: 5c12d831-9344-4343-a225-2c1b99485511
+		summarizeBy: none
+		sourceColumn: QuarterName
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearQuarter
+		dataType: string
+		lineageTag: 19eed04e-f08d-41f8-8882-6a92d3d3b572
+		summarizeBy: none
+		sourceColumn: YearQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 256411a5-2e56-45ec-9864-3994861ca369
+		summarizeBy: none
+		sourceColumn: Month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = User
+
+	column MonthName
+		dataType: string
+		lineageTag: 0619a232-788d-404e-a214-189d06bf0143
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: Month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		dataType: string
+		lineageTag: ee61c14c-ef18-4c6b-8e2c-dd30472fc6df
+		summarizeBy: none
+		sourceColumn: YearMonth
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 401d09e5-af30-4eb6-85bf-b84f84d39ded
+		summarizeBy: sum
+		sourceColumn: WeekOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: df309a1b-aecd-4028-89b7-d8f73536b6b2
+		summarizeBy: none
+		sourceColumn: IsWeekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekStartDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 64bec610-d95a-4197-8bac-99ee69d55545
+		summarizeBy: none
+		sourceColumn: WeekStartDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WeekEndDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c3a40ea8-b140-45ae-935e-9f911ef65ce8
+		summarizeBy: none
+		sourceColumn: WeekEndDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DayOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 76cce4db-2a4f-400e-8385-5ca1d1fc52b4
+		summarizeBy: sum
+		sourceColumn: DayOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: int64
+		formatString: 0
+		lineageTag: 29fac5b0-5062-45c0-bf39-e603c5d5574c
+		summarizeBy: sum
+		sourceColumn: DayOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		dataType: int64
+		formatString: 0
+		lineageTag: 67adcdb3-c2ca-45c1-9d14-a640aaca90c5
+		summarizeBy: sum
+		sourceColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName
+		dataType: string
+		lineageTag: 0f01c28d-672d-4c03-a700-78d2abaa3284
+		summarizeBy: none
+		sourceColumn: DayName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthStartDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9fc80c08-5af9-4001-8d39-eb394f496f14
+		summarizeBy: none
+		sourceColumn: MonthStartDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MonthEndDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 130b5656-7865-4b7e-a65a-8c74ce871583
+		summarizeBy: none
+		sourceColumn: MonthEndDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column IsHolidayUSA
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 44979b52-b9cf-4042-b316-e7c77cfafbf9
+		summarizeBy: none
+		sourceColumn: IsHolidayUSA
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsHolidayCAN
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2263f127-a425-4eed-a3bd-94dcf60cc570
+		summarizeBy: none
+		sourceColumn: IsHolidayCAN
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsHolidayMEX
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f5a278e6-dc10-4141-92bb-05cecbd78042
+		summarizeBy: none
+		sourceColumn: IsHolidayMEX
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolidayNameUSA
+		dataType: string
+		lineageTag: a0ab5457-ee0b-4e01-943e-959dfec7c602
+		summarizeBy: none
+		sourceColumn: HolidayNameUSA
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolidayNameCAN
+		dataType: string
+		lineageTag: ab14406d-b593-42a4-a819-b5182a012a75
+		summarizeBy: none
+		sourceColumn: HolidayNameCAN
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolidayNameMEX
+		dataType: string
+		lineageTag: 5906e7d7-b7c4-4e48-90b3-e0a1af2a7b71
+		summarizeBy: none
+		sourceColumn: HolidayNameMEX
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWorkdayUSA
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 287b037b-4593-4876-a475-332a948e1b3d
+		summarizeBy: none
+		sourceColumn: IsWorkdayUSA
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWorkdayCAN
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 47e0e1bc-7aff-4aac-9cc1-5f5113d1b43b
+		summarizeBy: none
+		sourceColumn: IsWorkdayCAN
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWorkdayMEX
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4a972636-fa2e-449f-911b-b212a8dce743
+		summarizeBy: none
+		sourceColumn: IsWorkdayMEX
+
+		annotation SummarizationSetBy = Automatic
+
+	column Today = TODAY()
+		formatString: General Date
+		lineageTag: a6f733ea-6d39-4e6a-a9c8-4b35ae1d130e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActual = DIM_Date[Date] < TODAY()
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bc66814f-1e0d-4bc7-8418-c939eb833ac5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNameAbbreviated = UPPER(LEFT(DIM_Date[MonthName], 3))
+		lineageTag: 020ce2aa-9f96-4fb0-9087-a7eeffd96db6
+		summarizeBy: none
+		sortByColumn: Month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_Date = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_DIM_Date = Source{[Schema="MIMIR",Item="DIM_Date"]}[Data]
+				in
+				    MIMIR_DIM_Date
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

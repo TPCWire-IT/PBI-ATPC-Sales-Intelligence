@@ -1,0 +1,82 @@
+table FACT_Budgets
+	lineageTag: 28f3293b-3406-4ced-8cf1-8fef11ec8fea
+
+	column BudgetKey
+		dataType: string
+		lineageTag: 98212d42-14f3-491a-8d43-3bf7344952f3
+		summarizeBy: none
+		sourceColumn: BudgetKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTeam
+		dataType: string
+		lineageTag: e6c0437b-c512-480d-9edb-89e04be4f5b4
+		summarizeBy: none
+		sourceColumn: SalesTeam
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 18081ab3-4363-46f3-902c-32af6935cdeb
+		summarizeBy: none
+		sourceColumn: BudgetDate
+
+		variation Variation
+			isDefault
+			relationship: a6c2d30d-3f48-4f14-a201-faeff5cbbd4d
+			defaultHierarchy: LocalDateTable_c3d26823-74df-42fa-89e3-85ee320b17e9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column BudgetType
+		dataType: string
+		lineageTag: d18dbac4-08cd-4ce4-915a-d6c272661ad5
+		summarizeBy: none
+		sourceColumn: BudgetType
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetAmount
+		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 5ab96321-1e41-411b-a845-362b36a5e74f
+		summarizeBy: sum
+		sourceColumn: BudgetAmount
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a5dbedd-4741-49be-9059-47782186cd80
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTeamKey
+		dataType: string
+		lineageTag: 1ebea91e-4fcd-4cd1-a2d5-5db0c9f033b8
+		summarizeBy: none
+		sourceColumn: SalesTeamKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FACT_Budgets = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_FACT_Budgets = Source{[Schema="MIMIR",Item="FACT_Budgets"]}[Data]
+				in
+				    MIMIR_FACT_Budgets
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

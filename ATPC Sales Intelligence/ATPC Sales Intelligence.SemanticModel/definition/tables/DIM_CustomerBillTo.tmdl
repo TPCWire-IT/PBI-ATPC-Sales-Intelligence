@@ -1,0 +1,236 @@
+table DIM_CustomerBillTo
+	lineageTag: a7d26754-f827-48a7-a3e7-b9ea12933d8d
+
+	column CustomerKey
+		dataType: string
+		lineageTag: fdafad47-620f-4810-b720-32a2eba270e1
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d0799f07-bd3b-46f1-bc78-4ed3c52314c4
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 39bf0751-1a03-43ad-bc41-e73fbc9ab48e
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		lineageTag: ba22b3e5-5ced-47a6-a1bb-02aaed8fac43
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: e1831c03-0d44-48fd-b4d2-6ee8632d82fd
+		summarizeBy: sum
+		sourceColumn: CustomerNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesforceID
+		dataType: string
+		lineageTag: 3dca9f41-61fa-4933-9bc5-8d576cf9c7d0
+		summarizeBy: none
+		sourceColumn: SalesforceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerName
+		dataType: string
+		lineageTag: beeb6d76-d5df-4857-bc1a-2b52daea4129
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentName
+		dataType: string
+		lineageTag: d8e8f157-06c7-42f8-9813-e54b4c9b143d
+		summarizeBy: none
+		sourceColumn: ParentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address1
+		dataType: string
+		lineageTag: 0812f596-5625-4ed1-8ae8-0f83a5d9830a
+		summarizeBy: none
+		sourceColumn: Address1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address2
+		dataType: string
+		lineageTag: 61c83202-686b-4559-b35f-8f87b1da377a
+		summarizeBy: none
+		sourceColumn: Address2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address3
+		dataType: string
+		lineageTag: 50b84da5-c71f-4339-81b6-c12f8780fa0a
+		summarizeBy: none
+		sourceColumn: Address3
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: fdc8dba0-6e54-44cf-b3fc-604329dfdefc
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvince
+		dataType: string
+		lineageTag: 10e0738f-76bf-44e1-9abe-40fb2fe1da38
+		summarizeBy: none
+		sourceColumn: StateProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZipPostalCode
+		dataType: string
+		lineageTag: 2ce272a0-1edf-4098-9efe-021d9ff3e442
+		summarizeBy: none
+		sourceColumn: ZipPostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 62d283cc-7ce8-4e4f-9d97-18d749cd9e52
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailAddress
+		dataType: string
+		lineageTag: f6017617-859e-47be-ad0a-c9e6a8369aee
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column Website
+		dataType: string
+		lineageTag: 6d0094a5-46ca-4ecb-aa14-af51aef9415c
+		summarizeBy: none
+		sourceColumn: Website
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 75d614f8-4179-4f43-9ad1-7afdc153409c
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: a1f6212b-b800-40a2-a0aa-d6fb823f1439
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 8b0a970b-5baa-4808-abe5-c4f86bd38a56
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubSegment
+		dataType: string
+		lineageTag: 9524ecb0-e87e-4ded-88ca-bbaf7147741c
+		summarizeBy: none
+		sourceColumn: SubSegment
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountClass
+		dataType: string
+		lineageTag: 5f9a6b07-e0df-470c-924e-1f35c0136e45
+		summarizeBy: none
+		sourceColumn: AccountClass
+
+		annotation SummarizationSetBy = Automatic
+
+	column WebLeadSource
+		dataType: string
+		lineageTag: 2c2fe35f-abc0-47f9-93f5-8940c5557921
+		summarizeBy: none
+		sourceColumn: WebLeadSource
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryKey
+		dataType: string
+		lineageTag: 13dcf947-f16b-48ea-8d66-db1b4adb480b
+		summarizeBy: none
+		sourceColumn: TerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDistributor
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bd295c82-ed02-49d1-9262-8c9744f4c28a
+		summarizeBy: none
+		sourceColumn: IsDistributor
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsStrategic
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a9db6dde-f566-41e5-b400-e1ef6de94e49
+		summarizeBy: none
+		sourceColumn: IsStrategic
+
+		annotation SummarizationSetBy = Automatic
+
+	column IndustryKey
+		dataType: string
+		lineageTag: 043b5f7b-659f-4a4a-9175-087316821006
+		summarizeBy: none
+		sourceColumn: IndustryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_CustomerBillTo = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_DIM_Customer = Source{[Schema="MIMIR",Item="DIM_Customer"]}[Data]
+				in
+				    MIMIR_DIM_Customer
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

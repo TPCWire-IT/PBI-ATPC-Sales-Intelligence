@@ -1,0 +1,75 @@
+table FACT_BPCForecasts
+	lineageTag: 41d37d99-2d5c-47bc-8b03-910b730cc049
+
+	column ForecastKey
+		dataType: string
+		lineageTag: 27428045-4b17-4d2a-a111-37e57e747a30
+		summarizeBy: none
+		sourceColumn: ForecastKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ForecastDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 45e9052a-c057-4bb8-b0c9-45dbe3a50c6f
+		summarizeBy: none
+		sourceColumn: ForecastDate
+
+		variation Variation
+			isDefault
+			relationship: 439f49c1-4577-4282-ab71-b215bd2a2249
+			defaultHierarchy: LocalDateTable_aea1cbf4-4fa3-4e93-936f-0f86c973b832.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ForecastType
+		dataType: string
+		lineageTag: 4d2b2867-8d66-4604-810a-24768b3e01b0
+		summarizeBy: none
+		sourceColumn: ForecastType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ForecastAmount
+		dataType: double
+		lineageTag: be71db33-f690-4721-8393-3c90e72fc49a
+		summarizeBy: sum
+		sourceColumn: ForecastAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ForecastDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 29e6e15f-4fdd-4fd5-ba56-97696fa34029
+		summarizeBy: none
+		sourceColumn: ForecastDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTeamKey
+		dataType: string
+		lineageTag: 9979ab89-7682-41f2-a02e-4f7563986a5f
+		summarizeBy: none
+		sourceColumn: SalesTeamKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FACT_BPCForecasts = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_FACT_Budgets = Source{[Schema="MIMIR",Item="FACT_BPCForecasts"]}[Data]
+				in
+				    MIMIR_FACT_Budgets
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

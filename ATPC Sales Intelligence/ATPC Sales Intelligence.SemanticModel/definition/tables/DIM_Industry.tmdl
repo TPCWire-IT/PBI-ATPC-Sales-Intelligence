@@ -1,0 +1,96 @@
+table DIM_Industry
+	lineageTag: 6408e117-ea62-4cfe-b93c-7f30f08275a2
+
+	column IndustryKey
+		dataType: string
+		lineageTag: 21b4241f-f7e7-4cc4-af43-e62e64bfddc7
+		summarizeBy: none
+		sourceColumn: IndustryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: 7b9f7d38-4fb6-48d4-97ec-8289c44d223a
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column MajorIndustry
+		dataType: string
+		lineageTag: a1b23081-b418-4af3-a21d-65e01fb0b4c4
+		summarizeBy: none
+		sourceColumn: MajorIndustry
+
+		annotation SummarizationSetBy = Automatic
+
+	column MinorIndustry
+		dataType: string
+		lineageTag: ce372b09-dec6-4875-884f-dce251a28ede
+		summarizeBy: none
+		sourceColumn: MinorIndustry
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportingDefinition
+		dataType: string
+		lineageTag: 29c7625e-f581-42f2-b647-41efedafa849
+		summarizeBy: none
+		sourceColumn: SupportingDefinition
+
+		annotation SummarizationSetBy = Automatic
+
+	column MajorMMS
+		dataType: string
+		lineageTag: 60feafd4-f2ee-4d7b-a61e-5bd9f4090308
+		summarizeBy: none
+		sourceColumn: MajorMMS
+
+		annotation SummarizationSetBy = Automatic
+
+	column MinorMMS
+		dataType: string
+		lineageTag: 58a0aea8-94bb-4b29-b010-05bd57bb5661
+		summarizeBy: none
+		sourceColumn: MinorMMS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSDTMarket
+		dataType: string
+		lineageTag: 31111ed6-80e7-4c67-b129-8f00616a7625
+		summarizeBy: none
+		sourceColumn: DSDTMarket
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSDTSubMarketCode
+		dataType: string
+		lineageTag: 740ce88a-5c8b-4c58-9059-bee173cc04e0
+		summarizeBy: none
+		sourceColumn: DSDTSubMarketCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column DSDTSubMarket
+		dataType: string
+		lineageTag: c3b3f245-21db-47b9-a535-c5240071eaac
+		summarizeBy: none
+		sourceColumn: DSDTSubMarket
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_Industry = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_DIM_Territory = Source{[Schema="MIMIR",Item="DIM_Industry"]}[Data]
+				in
+				    MIMIR_DIM_Territory
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

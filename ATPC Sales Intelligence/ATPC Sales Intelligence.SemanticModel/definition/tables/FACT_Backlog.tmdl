@@ -1,0 +1,256 @@
+table FACT_Backlog
+	lineageTag: db5e8219-87a5-4fbf-8875-ec3975b30a8b
+
+	column BacklogKey
+		dataType: string
+		lineageTag: 039d4d15-bb85-459d-bfbc-7af0f5d31da0
+		summarizeBy: none
+		sourceColumn: BacklogKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 40453ab6-6e03-4f38-8c99-aa3e6d196802
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a061ad7-6c3c-4c8f-b69f-28b3dd629090
+		summarizeBy: sum
+		sourceColumn: OrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderLine
+		dataType: int64
+		formatString: 0
+		lineageTag: 8861b926-a863-4ee7-a519-14faee74807d
+		summarizeBy: sum
+		sourceColumn: OrderLine
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderReleaseNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cf8c724-6936-47bf-90f6-ae6d173f0bd8
+		summarizeBy: sum
+		sourceColumn: OrderReleaseNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: ce9acf53-4d1c-407d-960e-968a12b3d66f
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		variation Variation
+			isDefault
+			relationship: 43377cb4-e044-4252-9ab2-1ed2f174a43e
+			defaultHierarchy: LocalDateTable_716789d2-2fd1-472a-8bc2-562e435c3d8c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column RequestDate
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 72e870d7-c17e-400e-81a4-bfc16dcdc7a3
+		summarizeBy: none
+		sourceColumn: RequestDate
+
+		variation Variation
+			isDefault
+			relationship: 3f94b546-2501-4c91-ac77-07d7e4e2482a
+			defaultHierarchy: LocalDateTable_ef6c2a4f-66d9-4eb6-94e6-ea6b6aebfc0b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column OrderAmount
+		dataType: double
+		lineageTag: 5d02031a-77a5-4c7a-be1c-b9c9cf649784
+		summarizeBy: sum
+		sourceColumn: OrderAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrderQuantity
+		dataType: double
+		lineageTag: dabbfbbe-b792-4864-a82c-e70b9d13674e
+		summarizeBy: sum
+		sourceColumn: OrderQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrderQuantityUOM
+		dataType: string
+		lineageTag: c527346c-50d8-46e9-827f-d02883f4f981
+		summarizeBy: none
+		sourceColumn: OrderQuantityUOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoicedAmount
+		dataType: double
+		lineageTag: f026dd2a-ac5f-4956-afe5-46374ab84c29
+		summarizeBy: sum
+		sourceColumn: InvoicedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InvoicedQuantity
+		dataType: double
+		lineageTag: 7cda0506-7ac9-4ecd-8a2b-7086a2b8ebc0
+		summarizeBy: sum
+		sourceColumn: InvoicedQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BacklogAmount
+		dataType: double
+		lineageTag: e36cde55-f8b8-4dfd-82ab-f391bbb24dab
+		summarizeBy: sum
+		sourceColumn: BacklogAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BacklogQuantity
+		dataType: double
+		lineageTag: e95747e2-25df-4071-957d-254ba9b892fc
+		summarizeBy: sum
+		sourceColumn: BacklogQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SoldToCustomerKey
+		dataType: string
+		lineageTag: fdadf20f-b369-4e82-bc6f-7678886436a7
+		summarizeBy: none
+		sourceColumn: SoldToCustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillToCustomerKey
+		dataType: string
+		lineageTag: d5304813-6693-4ca1-8001-5287c23a301a
+		summarizeBy: none
+		sourceColumn: BillToCustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipToCustomerKey
+		dataType: string
+		lineageTag: 28faaff9-6a12-4b6e-8fdb-037f5dfe8347
+		summarizeBy: none
+		sourceColumn: ShipToCustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column MasterCustomerKey
+		dataType: string
+		lineageTag: 63f43531-e6d5-469b-bee0-8325c5bb7d96
+		summarizeBy: none
+		sourceColumn: MasterCustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartKey
+		dataType: string
+		lineageTag: 663afbed-59e1-4392-977e-f78ad2e97426
+		summarizeBy: none
+		sourceColumn: PartKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalespersonKey
+		dataType: string
+		lineageTag: a61edec5-dcec-43db-984e-8d0261b70a7d
+		summarizeBy: none
+		sourceColumn: SalespersonKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryKey
+		dataType: string
+		lineageTag: fc373031-df9f-4030-bec5-d3dd91f9a173
+		summarizeBy: none
+		sourceColumn: TerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTeamKey
+		dataType: string
+		lineageTag: 36d76bd9-b8c1-4bb1-920e-9244f9e99748
+		summarizeBy: none
+		sourceColumn: SalesTeamKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column RequestedDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 67e1a575-77c5-47d1-865c-a3c217a74db4
+		summarizeBy: none
+		sourceColumn: RequestedDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column NeedByDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 06c675ec-c72f-427e-a652-07218b45be4c
+		summarizeBy: none
+		sourceColumn: NeedByDate
+
+		variation Variation
+			isDefault
+			relationship: 4d96ce1c-4bb5-4d35-8839-818a6e04aee9
+			defaultHierarchy: LocalDateTable_d4ce7bc4-9db7-4466-b566-785dcc9c5eb1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column IndustryKey
+		dataType: string
+		lineageTag: c0676e14-b355-49ad-829c-fa5e8f3d5e1c
+		summarizeBy: none
+		sourceColumn: IndustryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FACT_Backlog = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_FACT_Backlog = Source{[Schema="MIMIR",Item="FACT_Backlog"]}[Data]
+				in
+				    MIMIR_FACT_Backlog
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

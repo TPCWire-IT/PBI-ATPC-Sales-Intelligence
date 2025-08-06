@@ -1,0 +1,77 @@
+table 'DatePeriodSlicer Sorted'
+	lineageTag: c8d46bf4-39c7-4573-9ab9-45e8a31d50a3
+
+	column Date
+		formatString: Short Date
+		lineageTag: 83ca3b97-5b52-471f-8d1c-f914e95ed4ae
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filter
+		lineageTag: c7ace8df-b450-4a91-99f8-261b0ba605c4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Filter]
+		sortByColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		formatString: 0
+		lineageTag: bebe2107-a9b9-4325-b851-bfcea4d7933c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DatePeriodSlicer Sorted' = calculated
+		mode: import
+		source = ```
+				
+				VAR _today = TODAY()
+				VAR _day = DAY(_today)
+				VAR _month = MONTH(_today)
+				VAR _year = YEAR(_today)
+				VAR _last7 = _today - 7
+				VAR _thismonthstart = DATE(_year, _month, 1)
+				VAR _thisyearstart = DATE(_year, 1, 1)
+				VAR _thisquarterstart = DATE(YEAR(_today), SWITCH(TRUE, _month > 9, 10, _month > 6, 7, _month > 3, 4, 1), 1)
+				VAR _TTM = DATE(_year - 1, _month, _day)
+				VAR _2LTM = DATE(_year - 2, _month, _day)
+				
+				RETURN
+				UNION(
+				    ADDCOLUMNS(
+				        CALENDAR(_last7, _today),
+				        "Filter", "Last 7 Days", "Order", 1
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(_thismonthstart, _today),
+				        "Filter", "MTD", "Order", 2
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(_thisquarterstart, _today),
+				        "Filter", "QTD", "Order", 3
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(_thisyearstart, _today),
+				        "Filter", "YTD", "Order", 4
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(_TTM, _today),
+				        "Filter", "TTM", "Order", 5
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(_2LTM, _today),
+				        "Filter", "2LTM", "Order", 6
+				    )
+				)
+				
+				```
+
+	annotation PBI_Id = 4699cfde767c44dc85d4601365de6e1f
+

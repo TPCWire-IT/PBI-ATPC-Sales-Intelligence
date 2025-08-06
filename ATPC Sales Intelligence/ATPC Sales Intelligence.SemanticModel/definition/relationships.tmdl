@@ -1,0 +1,297 @@
+relationship 7325c1a0-aefd-4d2d-a93e-8d25173d2754
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_RecognizedOrders.RequestDate
+	toColumn: LocalDateTable_e7929540-98ab-4098-a8f8-606a5be013c4.Date
+
+relationship 2e69be1f-b9a1-4f58-b545-8f2d7ca7a3cd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_RecognizedOrders.NeedByDate
+	toColumn: LocalDateTable_8c9bca32-ef92-433f-b1aa-fb2c686e9f2d.Date
+
+relationship ed11ca1e-6754-4751-8827-f580b3db9330
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_RecognizedOrders.OrderDate
+	toColumn: LocalDateTable_c9d23351-2964-4671-b24d-9f8a37f3296f.Date
+
+relationship 3e33a97e-eb0c-4f77-bae4-e5b107b1b7c9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_Salesperson.StartDate
+	toColumn: LocalDateTable_748d0592-fe6e-4dbb-a15e-4044f6cc5605.Date
+
+relationship ada6dbc8-c304-4938-b2a2-be91eae0a47d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_Salesperson.EndDate
+	toColumn: LocalDateTable_90db98d6-bb34-4ee5-b915-9b70cb49da10.Date
+
+relationship dd1f0948-1b81-06d8-8698-2ddb946da1bf
+	fromColumn: FACT_RecognizedOrders.BillToCustomerKey
+	toColumn: DIM_CustomerBillTo.CustomerKey
+
+relationship 81ca4f18-7947-b2f5-0796-e611217f6ccd
+	fromColumn: FACT_RecognizedOrders.ShipToCustomerKey
+	toColumn: DIM_CustomerShipTo.CustomerKey
+
+relationship f75085f9-8e86-e792-a289-93131e8c414c
+	fromColumn: FACT_RecognizedOrders.ShipToCustomerKey
+	toColumn: DIM_CustomerSoldTo.CustomerKey
+
+relationship 0d6d6a6a-76e0-cb7b-f77b-093e2fb50ca0
+	fromColumn: FACT_RecognizedOrders.PartKey
+	toColumn: DIM_Part.PartKey
+
+relationship 2d129868-5e63-4369-210c-768e01effd33
+	fromColumn: FACT_RecognizedOrders.SalespersonKey
+	toColumn: DIM_Salesperson.SalespersonKey
+
+relationship f40734f0-bc27-62be-66db-7796659d5e4e
+	fromColumn: FACT_RecognizedOrders.TerritoryKey
+	toColumn: DIM_Territory.TerritoryKey
+
+relationship fd12ea9c-9083-4b50-ad27-7f99a06c5b58
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_Invoices.InvoiceDate
+	toColumn: LocalDateTable_df08ad42-9757-4013-91f2-248bd779209b.Date
+
+relationship d0ed5115-5ff5-4707-8463-1a505623239d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_Invoices.DueDate
+	toColumn: LocalDateTable_542c536a-c73b-4979-a447-fb43242b6089.Date
+
+relationship e0f282ea-b796-4235-a759-ce255409a306
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_Invoices.ClosedDate
+	toColumn: LocalDateTable_4bb5206a-e392-47f5-b075-cfe45c895e4d.Date
+
+relationship 1b64f52d-08f3-4222-af49-10363adb83e6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_Invoices.ApplyDate
+	toColumn: LocalDateTable_c564dafe-72c6-4f47-8a98-33c0bd66adeb.Date
+
+relationship bbda59f4-90d0-4d46-9bc3-63750da65fbd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_Invoices.ShipDate
+	toColumn: LocalDateTable_bced04f8-f241-4682-b64d-76fb9cae808c.Date
+
+relationship 00f1535c-87c4-4fed-ba6a-cd176235b206
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_Invoices.OrderDate
+	toColumn: LocalDateTable_9b20731d-746b-408c-9a81-ca84a12878c4.Date
+
+relationship AutoDetected_71c24d36-3b7b-4c2e-bf5d-3264818dd354
+	fromColumn: FACT_Invoices.TerritoryKey
+	toColumn: DIM_Territory.TerritoryKey
+
+relationship AutoDetected_9afc1666-52b9-4287-bd5a-d12bb30ceeaa
+	fromColumn: FACT_Invoices.PartKey
+	toColumn: DIM_Part.PartKey
+
+relationship b174a8e3-1bfa-2e51-fd93-d18603048d38
+	fromColumn: FACT_Invoices.BillToCustomerKey
+	toColumn: DIM_CustomerBillTo.CustomerKey
+
+relationship 838ceb09-9377-fa12-2902-14ebc9abd543
+	fromColumn: FACT_Invoices.ShipToCustomerKey
+	toColumn: DIM_CustomerShipTo.CustomerKey
+
+relationship 720fc37d-049e-5733-8f35-5ab7a27949d0
+	fromColumn: FACT_Invoices.SoldToCustomerKey
+	toColumn: DIM_CustomerSoldTo.CustomerKey
+
+relationship a2ef9d31-227e-b10d-4a46-56e7be357440
+	fromColumn: FACT_Invoices.InvoiceDateKey
+	toColumn: DIM_Date.DateKey
+
+relationship 22dd2034-2945-a662-229c-7cceab800c37
+	fromColumn: FACT_Invoices.SalespersonKey
+	toColumn: DIM_Salesperson.SalespersonKey
+
+relationship 2ec74fdf-9258-065f-394a-0c89f2e6aeaa
+	fromColumn: FACT_Invoices.PaymentTermsKey
+	toColumn: DIM_PaymentTerms.PaymentTermsKey
+
+relationship a6c2d30d-3f48-4f14-a201-faeff5cbbd4d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_Budgets.BudgetDate
+	toColumn: LocalDateTable_c3d26823-74df-42fa-89e3-85ee320b17e9.Date
+
+relationship AutoDetected_c222bf2a-917c-4527-b42f-d93b994a4556
+	fromColumn: FACT_Budgets.DateKey
+	toColumn: DIM_Date.DateKey
+
+relationship 5e82099d-b0ca-ed40-d95a-e9aefea91f30
+	fromColumn: FACT_Budgets.SalesTeamKey
+	toColumn: DIM_SalesTeam.SalesTeamKey
+
+relationship AutoDetected_ec13d56f-185d-4b54-9ec9-7517f17517fc
+	fromColumn: FACT_RecognizedOrders.SalesTeamKey
+	toColumn: DIM_SalesTeam.SalesTeamKey
+
+relationship AutoDetected_2b766341-572c-4a63-a303-3f46f5b33b4b
+	fromColumn: FACT_Invoices.SalesTeamKey
+	toColumn: DIM_SalesTeam.SalesTeamKey
+
+relationship 43377cb4-e044-4252-9ab2-1ed2f174a43e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_Backlog.OrderDate
+	toColumn: LocalDateTable_716789d2-2fd1-472a-8bc2-562e435c3d8c.Date
+
+relationship 3f94b546-2501-4c91-ac77-07d7e4e2482a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_Backlog.RequestDate
+	toColumn: LocalDateTable_ef6c2a4f-66d9-4eb6-94e6-ea6b6aebfc0b.Date
+
+relationship AutoDetected_d79ea4c7-15d0-42aa-bf17-091145170149
+	fromColumn: FACT_Backlog.TerritoryKey
+	toColumn: DIM_Territory.TerritoryKey
+
+relationship AutoDetected_05c71953-2b21-43e3-b097-30d43ce40fcf
+	fromColumn: FACT_Backlog.PartKey
+	toColumn: DIM_Part.PartKey
+
+relationship AutoDetected_e3467687-566d-4e3c-a494-214a6dbd6867
+	fromColumn: FACT_Backlog.SalespersonKey
+	toColumn: DIM_Salesperson.SalespersonKey
+
+relationship AutoDetected_fe5dff36-62e4-40c8-8828-199c1051e910
+	fromColumn: FACT_Backlog.SalesTeamKey
+	toColumn: DIM_SalesTeam.SalesTeamKey
+
+relationship e5e792a9-49ae-9511-632b-2f4d33b76d0d
+	fromColumn: FACT_Backlog.BillToCustomerKey
+	toColumn: DIM_CustomerBillTo.CustomerKey
+
+relationship 513b922a-c427-a1fb-2b00-ad31e433d0a3
+	fromColumn: FACT_Backlog.ShipToCustomerKey
+	toColumn: DIM_CustomerShipTo.CustomerKey
+
+relationship 09a0095d-cd76-26ed-0de1-87467662e043
+	fromColumn: FACT_Backlog.SoldToCustomerKey
+	toColumn: DIM_CustomerSoldTo.CustomerKey
+
+relationship 5f2fd645-74dc-46e2-aefc-7ce2a1dbd832
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_BookBill.ForecastDate
+	toColumn: LocalDateTable_f311f05e-3f38-4f49-a3b2-5974a6f14bf3.Date
+
+relationship 9464deb1-c09e-4916-ba68-44adbfa4c2eb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_BookBill.InitialPredictionDate
+	toColumn: LocalDateTable_6a8c9fb5-043b-49e0-ac58-12d9c0989cc9.Date
+
+relationship AutoDetected_c9122161-fc30-4483-8b90-44286282eb5e
+	fromColumn: FACT_BookBill.SalesTeamKey
+	toColumn: DIM_SalesTeam.SalesTeamKey
+
+relationship 25d95b20-9a31-2da0-7a7a-fe17f3d407a7
+	fromColumn: FACT_BookBill.ForecastDateKey
+	toColumn: DIM_Date.DateKey
+
+relationship 2ef46887-d772-d404-a24d-4f61acbd7fbf
+	fromColumn: FACT_Backlog.RequestedDateKey
+	toColumn: DIM_Date.DateKey
+
+relationship 439f49c1-4577-4282-ab71-b215bd2a2249
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_BPCForecasts.ForecastDate
+	toColumn: LocalDateTable_aea1cbf4-4fa3-4e93-936f-0f86c973b832.Date
+
+relationship AutoDetected_c490f08a-3bdd-4a53-be4e-4be5bacbf965
+	fromColumn: FACT_BPCForecasts.SalesTeamKey
+	toColumn: DIM_SalesTeam.SalesTeamKey
+
+relationship 43a5cc8a-8b6a-7412-ec9f-8b8ff68511b8
+	fromColumn: FACT_BPCForecasts.ForecastDateKey
+	toColumn: DIM_Date.DateKey
+
+relationship 7ef07966-3cee-d9da-7a62-21ca18b5f20a
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'DatePeriodSlicer Sorted'.Date
+	toColumn: DIM_Date.Date
+
+relationship 9b834e7a-7332-684c-f87a-01d0589e02d9
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'DatePeriodSlicer Sorted 2'.Date
+	toColumn: DIM_Date.Date
+
+relationship 15f4e300-909e-4089-964d-6c90d9ddf660
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_RecognizedOrders.RecognitionDate
+	toColumn: LocalDateTable_2ad6e745-1fad-40e8-bf59-541db4de62e5.Date
+
+relationship 92ed8510-bacb-bf39-e199-af45056d9eb9
+	fromColumn: FACT_RecognizedOrders.RecognitionDateKey
+	toColumn: DIM_Date.DateKey
+
+relationship dcd48eb3-0cdb-465d-b212-cd22e030a1ad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_EnteredOrders.RequestDate
+	toColumn: LocalDateTable_5e12c932-6b36-455b-b947-4ba84df103da.Date
+
+relationship 6a9ce718-b0a1-4743-bc64-4f582e78dfab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_EnteredOrders.NeedByDate
+	toColumn: LocalDateTable_6d8a960e-83f0-4b3f-8c78-c341b4359da2.Date
+
+relationship 0144b967-d0d8-4039-a928-211c94d01c26
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_EnteredOrders.OrderDate
+	toColumn: LocalDateTable_920ece97-f24f-4cac-9f6f-d5696355fe97.Date
+
+relationship d0a43a56-2460-403e-b99d-53776c4a77b2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_EnteredOrders.RecognitionDate
+	toColumn: LocalDateTable_63d44e05-6fa0-405e-944b-1cf87c40d046.Date
+
+relationship AutoDetected_0eccd0c6-e896-4cd8-a4d9-e4f82d28fa31
+	fromColumn: FACT_EnteredOrders.TerritoryKey
+	toColumn: DIM_Territory.TerritoryKey
+
+relationship AutoDetected_23da5863-04b2-4f23-9328-932a26dc7d84
+	fromColumn: FACT_EnteredOrders.PartKey
+	toColumn: DIM_Part.PartKey
+
+relationship AutoDetected_8e2ca223-8f5f-4c64-bc82-d538cd838f16
+	fromColumn: FACT_EnteredOrders.SalesTeamKey
+	toColumn: DIM_SalesTeam.SalesTeamKey
+
+relationship 4d96ce1c-4bb5-4d35-8839-818a6e04aee9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_Backlog.NeedByDate
+	toColumn: LocalDateTable_d4ce7bc4-9db7-4466-b566-785dcc9c5eb1.Date
+
+relationship 4f8cd8a1-67e8-40b1-ea82-d5a750ddb6e7
+	fromColumn: FACT_EnteredOrders.ShipToCustomerKey
+	toColumn: DIM_CustomerShipTo.CustomerKey
+
+relationship 5c01c467-359d-fbcf-a055-f47ae762aa40
+	fromColumn: FACT_EnteredOrders.SoldToCustomerKey
+	toColumn: DIM_CustomerSoldTo.CustomerKey
+
+relationship ac68434d-3946-7913-968a-a3ec1fe5f597
+	fromColumn: FACT_EnteredOrders.SalespersonKey
+	toColumn: DIM_Salesperson.SalespersonKey
+
+relationship 17601478-4372-eb38-ee18-4923dcfe2cce
+	fromColumn: FACT_EnteredOrders.BillToCustomerKey
+	toColumn: DIM_CustomerBillTo.CustomerKey
+
+relationship 8898338a-f68f-dd83-89a6-875f33a5c61a
+	fromColumn: FACT_EnteredOrders.OrderDateKey
+	toColumn: DIM_Date.DateKey
+
+relationship 5c792ee2-db47-e21c-859f-e978898cdc78
+	fromColumn: FACT_Invoices.IndustryKey
+	toColumn: DIM_Industry.IndustryKey
+
+relationship d5c4cb14-995f-89b2-aad1-7c27f64a062b
+	fromColumn: FACT_Backlog.IndustryKey
+	toColumn: DIM_Industry.IndustryKey
+
+relationship 3eeb1250-b8e5-878b-98ac-0b3f46604491
+	fromColumn: FACT_RecognizedOrders.IndustryKey
+	toColumn: DIM_Industry.IndustryKey
+
+relationship 6bead05b-93ef-3771-570b-d66a8861240d
+	fromColumn: FACT_EnteredOrders.IndustryKey
+	toColumn: DIM_Industry.IndustryKey
+

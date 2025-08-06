@@ -1,0 +1,298 @@
+table DIM_Part
+	lineageTag: 712ce239-f9be-410d-9a07-8388a54999b1
+
+	column PartKey
+		dataType: string
+		lineageTag: 4ed6dc7b-1712-4e30-954f-8e16697d7fb6
+		summarizeBy: none
+		sourceColumn: PartKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3e991295-2e74-48c3-a30e-e1904b53e7d1
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: bd3da7d7-cb49-436e-bb72-a60bbe43ec07
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartNumber
+		dataType: string
+		lineageTag: c2c9104c-ded4-4823-862c-085729d76e0d
+		summarizeBy: none
+		sourceColumn: PartNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartNumberDescription
+		dataType: string
+		lineageTag: 69ed3822-49f8-4da3-b152-fa6af9944006
+		summarizeBy: none
+		sourceColumn: PartNumberDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductGroup
+		dataType: string
+		lineageTag: f1ec8d8e-4e39-4960-9245-0a9a71d5443b
+		summarizeBy: none
+		sourceColumn: ProductGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductGroupDescription
+		dataType: string
+		lineageTag: 0b932d4f-7e64-4aa2-9a15-cfef231f4c8d
+		summarizeBy: none
+		sourceColumn: ProductGroupDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtyBearing
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a16766ee-aa33-4c88-a5f6-7a7be90f6398
+		summarizeBy: none
+		sourceColumn: QtyBearing
+
+		annotation SummarizationSetBy = Automatic
+
+	column PartCreatedOnFly
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3dbcd9ca-9bbd-4fff-a96b-d3961b2568d9
+		summarizeBy: none
+		sourceColumn: PartCreatedOnFly
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReclassID
+		dataType: string
+		lineageTag: 4e6e73e2-f13d-42be-a497-18071d7beac1
+		summarizeBy: none
+		sourceColumn: ReclassID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReclassMethod
+		dataType: string
+		lineageTag: e49245eb-a478-4eeb-94f9-f1f7e8b5218a
+		summarizeBy: none
+		sourceColumn: ReclassMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReclassType
+		dataType: string
+		lineageTag: ed41a356-6d09-4246-950f-78e7e9c5c849
+		summarizeBy: none
+		sourceColumn: ReclassType
+
+		annotation SummarizationSetBy = Automatic
+
+	column NetWeight
+		dataType: double
+		lineageTag: d5e6fa40-419a-4e08-a125-b4868a7d5a40
+		summarizeBy: sum
+		sourceColumn: NetWeight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NetWeightUOM
+		dataType: string
+		lineageTag: 494d1ec7-1e15-491a-8c1d-4fef79975ff2
+		summarizeBy: none
+		sourceColumn: NetWeightUOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column GrossWeight
+		dataType: double
+		lineageTag: 3bf68b43-c650-4638-8a36-bfbfbf6c5225
+		summarizeBy: sum
+		sourceColumn: GrossWeight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GrossWeightUOM
+		dataType: string
+		lineageTag: c6ef9f99-2f1b-44e3-9cf1-86567a73f26c
+		summarizeBy: none
+		sourceColumn: GrossWeightUOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column NetVolume
+		dataType: double
+		lineageTag: 0c32e146-3a2f-4754-9198-4626ee69e9eb
+		summarizeBy: sum
+		sourceColumn: NetVolume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NetVolumeUOM
+		dataType: string
+		lineageTag: 0d69faff-126f-4c78-b6cd-17ae38a3963d
+		summarizeBy: none
+		sourceColumn: NetVolumeUOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubPart
+		dataType: string
+		lineageTag: 2d36485b-0ae7-4598-b27f-7d4fe59b788a
+		summarizeBy: none
+		sourceColumn: SubPart
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaxTemp
+		dataType: double
+		lineageTag: c558e5ce-4838-4f43-86a5-4d3f7f121e97
+		summarizeBy: sum
+		sourceColumn: MaxTemp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Voltage
+		dataType: double
+		lineageTag: d2ba2379-ddd0-46f9-a83e-bfedbece74d9
+		summarizeBy: sum
+		sourceColumn: Voltage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Plant
+		dataType: string
+		lineageTag: ef3c4f5c-a20e-4a92-8989-3c021031dbcc
+		summarizeBy: none
+		sourceColumn: Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column MinimumQty
+		dataType: double
+		lineageTag: 082dac80-1840-4f6b-a5ed-1e15343410b9
+		summarizeBy: sum
+		sourceColumn: MinimumQty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MaximumQty
+		dataType: double
+		lineageTag: fb2ecb09-e569-4d3f-b263-2dfc3fb73fd5
+		summarizeBy: sum
+		sourceColumn: MaximumQty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SafetyQty
+		dataType: double
+		lineageTag: 5c00293e-e953-40e4-8668-f0e02a5f9b66
+		summarizeBy: sum
+		sourceColumn: SafetyQty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ReOrderLevel
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bce5a431-c234-478e-8bc1-175649b03f2f
+		summarizeBy: none
+		sourceColumn: ReOrderLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column MinOrderQty
+		dataType: double
+		lineageTag: ba962617-4331-416a-ab2e-33126b82eaf4
+		summarizeBy: sum
+		sourceColumn: MinOrderQty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LeadTime
+		dataType: int64
+		formatString: 0
+		lineageTag: 0647ecef-9324-4c3f-8c8d-02cbdb5a1edb
+		summarizeBy: sum
+		sourceColumn: LeadTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column GenerateSugg
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c901690f-0573-4c9a-8932-b845115b866e
+		summarizeBy: none
+		sourceColumn: GenerateSugg
+
+		annotation SummarizationSetBy = Automatic
+
+	column VendorNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ccd1690-666f-4bf3-b8ba-0c3c2cf5fa82
+		summarizeBy: sum
+		sourceColumn: VendorNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCustom
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d48c7e86-6baa-4957-8d02-015eeeef74a3
+		summarizeBy: none
+		sourceColumn: IsCustom
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductLine
+		dataType: string
+		lineageTag: 64095591-d796-4fd9-b1a2-afeb3dd31271
+		summarizeBy: none
+		sourceColumn: ProductLine
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_Part = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_DIM_Part = Source{[Schema="MIMIR",Item="DIM_Part"]}[Data]
+				in
+				    MIMIR_DIM_Part
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

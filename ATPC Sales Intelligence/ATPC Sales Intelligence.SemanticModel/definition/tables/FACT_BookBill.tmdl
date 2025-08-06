@@ -1,0 +1,83 @@
+table FACT_BookBill
+	lineageTag: 9ddc219f-2ae0-4786-8525-9b30be1fe424
+
+	column PredictionKey
+		dataType: string
+		lineageTag: d342637e-29e9-4bc3-b10d-e66b6bc2177d
+		summarizeBy: none
+		sourceColumn: PredictionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ForecastDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3c201b6e-a195-48a5-9c83-158fc4143a56
+		summarizeBy: none
+		sourceColumn: ForecastDate
+
+		variation Variation
+			isDefault
+			relationship: 5f2fd645-74dc-46e2-aefc-7ce2a1dbd832
+			defaultHierarchy: LocalDateTable_f311f05e-3f38-4f49-a3b2-5974a6f14bf3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column InitialPredictionAmount
+		dataType: double
+		lineageTag: c5e143bb-d611-441d-8158-6f7c7340cd5d
+		summarizeBy: sum
+		sourceColumn: InitialPredictionAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InitialPredictionDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5d783759-ba34-4607-b6ee-8c204837c3ee
+		summarizeBy: none
+		sourceColumn: InitialPredictionDate
+
+		variation Variation
+			isDefault
+			relationship: 9464deb1-c09e-4916-ba68-44adbfa4c2eb
+			defaultHierarchy: LocalDateTable_6a8c9fb5-043b-49e0-ac58-12d9c0989cc9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SalesTeamKey
+		dataType: string
+		lineageTag: c264848a-0e22-4ca9-9f35-bbf947a97aab
+		summarizeBy: none
+		sourceColumn: SalesTeamKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ForecastDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 41a0ab9c-9cb3-4d65-94be-aac1f5337954
+		summarizeBy: none
+		sourceColumn: ForecastDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FACT_BookBill = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_DIM_Part = Source{[Schema="MIMIR",Item="FACT_BookBill"]}[Data]
+				in
+				    MIMIR_DIM_Part
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

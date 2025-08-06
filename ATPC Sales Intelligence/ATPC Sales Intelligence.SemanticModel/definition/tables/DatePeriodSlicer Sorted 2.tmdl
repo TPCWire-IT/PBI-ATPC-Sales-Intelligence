@@ -1,0 +1,64 @@
+table 'DatePeriodSlicer Sorted 2'
+	lineageTag: d097c41d-4862-4e21-9788-37330c3c5122
+
+	column Date
+		formatString: General Date
+		lineageTag: 27f815c2-d106-48c7-8ee8-6a3c2f318a16
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filter
+		lineageTag: 37018c5f-8643-4a69-a1ad-31c87f88546e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Filter]
+		sortByColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		formatString: 0
+		lineageTag: e3debf81-970c-4210-9924-b1b223560628
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DatePeriodSlicer Sorted 2' = calculated
+		mode: import
+		source = ```
+				
+				VAR _today = TODAY()
+				VAR _thismonthstart = DATE(YEAR(_today), MONTH(_today), 1)
+				VAR _thisyearstart = DATE(YEAR(_today), 1, 1)
+				VAR _6monthsAgo = EDATE(_today, -6)
+				VAR _12monthsAgo = EDATE(_today, -12)
+				
+				RETURN
+				UNION(
+				    ADDCOLUMNS(
+				        CALENDAR(_thismonthstart, _today),
+				        "Filter", "MTD", "Order", 1
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(_thisyearstart, _today),
+				        "Filter", "YTD", "Order", 2
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(_6monthsAgo, _today),
+				        "Filter", "L6M", "Order", 3
+				    ),
+				    ADDCOLUMNS(
+				        CALENDAR(_12monthsAgo, _today),
+				        "Filter", "L12M", "Order", 4
+				    )
+				)
+				
+				```
+
+	annotation PBI_Id = 91f46912672447c4b9897abfc4a9e72a
+

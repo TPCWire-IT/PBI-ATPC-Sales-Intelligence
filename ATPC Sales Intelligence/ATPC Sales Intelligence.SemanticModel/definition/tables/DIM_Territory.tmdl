@@ -1,0 +1,105 @@
+table DIM_Territory
+	lineageTag: b90818e9-2335-467f-965f-43b6be9332df
+
+	column TerritoryKey
+		dataType: string
+		lineageTag: 4d92c914-3473-40d8-a92a-1a114c326d61
+		summarizeBy: none
+		sourceColumn: TerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 51a19b57-bb35-4ebf-8591-6655796ffe72
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: d268418d-ca0d-4209-b4f1-71efe7b4415e
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryID
+		dataType: string
+		lineageTag: 148ff1e7-a27f-45f9-b04b-42d5b0607eaa
+		summarizeBy: none
+		sourceColumn: TerritoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryName
+		dataType: string
+		lineageTag: b83099b1-7d64-4e8a-af46-6f1a3b27d69f
+		summarizeBy: none
+		sourceColumn: TerritoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionCode
+		dataType: string
+		lineageTag: e1daa994-250e-440d-b60e-06a4f3216d98
+		summarizeBy: none
+		sourceColumn: RegionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionDescription
+		dataType: string
+		lineageTag: 2d1070ab-e6bb-4edf-9dd9-575ace5e51e4
+		summarizeBy: none
+		sourceColumn: RegionDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTeam
+		dataType: string
+		lineageTag: b1c6bb57-ec96-493f-a022-f38c13323cd4
+		summarizeBy: none
+		sourceColumn: SalesTeam
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalespersonKey
+		dataType: string
+		lineageTag: f3f546cd-adae-45d0-a18f-1128fa343e6e
+		summarizeBy: none
+		sourceColumn: SalespersonKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesGroup
+		dataType: string
+		lineageTag: b5d3e74b-803e-48e3-a6bd-17e32d70d5c0
+		summarizeBy: none
+		sourceColumn: SalesGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTeamKey
+		dataType: string
+		lineageTag: 47c50595-4745-4765-981e-c9b09ef73738
+		summarizeBy: none
+		sourceColumn: SalesTeamKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_Territory = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_DIM_Territory = Source{[Schema="MIMIR",Item="DIM_Territory"]}[Data]
+				in
+				    MIMIR_DIM_Territory
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

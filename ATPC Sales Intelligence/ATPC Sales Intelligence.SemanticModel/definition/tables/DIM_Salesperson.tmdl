@@ -1,0 +1,173 @@
+table DIM_Salesperson
+	lineageTag: eeb38d90-84fc-42be-a035-8cb9fd1997f2
+
+	column SalespersonKey
+		dataType: string
+		lineageTag: 483238f6-6528-4864-8c11-112fc1dd02a4
+		summarizeBy: none
+		sourceColumn: SalespersonKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4e617f04-d18c-4c1a-bb70-832af47f8a43
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 4987ebc2-ee9e-4cba-85a4-e9e55a513005
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesRepCode
+		dataType: string
+		lineageTag: 9e4564ea-bad7-4141-ae96-1133bdc1d282
+		summarizeBy: none
+		sourceColumn: SalesRepCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullName
+		dataType: string
+		lineageTag: bcfeab81-53b2-4dac-9a7c-4d00267e1f53
+		summarizeBy: none
+		sourceColumn: FullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 05c4df87-ac32-4feb-a7a6-6902ecb3ab41
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address1
+		dataType: string
+		lineageTag: cf829d99-102d-4985-8510-7c3a016937e1
+		summarizeBy: none
+		sourceColumn: Address1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address2
+		dataType: string
+		lineageTag: 21cffa96-2f2b-4415-a622-bbbb87211b15
+		summarizeBy: none
+		sourceColumn: Address2
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: b8948932-d47f-4173-b2ba-748b4cadb5d0
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvince
+		dataType: string
+		lineageTag: 09cbf79d-d4cd-44b7-8e05-0d4e8c6ecf55
+		summarizeBy: none
+		sourceColumn: StateProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZipPostalCode
+		dataType: string
+		lineageTag: 98e34799-095b-4dc9-afe5-74256fb08257
+		summarizeBy: none
+		sourceColumn: ZipPostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 5537f4ce-d6ca-48e1-9707-16d68499a559
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkPhone
+		dataType: string
+		lineageTag: 5a58e5b8-40c5-4ca2-82be-1cd2656de5fd
+		summarizeBy: none
+		sourceColumn: WorkPhone
+
+		annotation SummarizationSetBy = Automatic
+
+	column CellPhone
+		dataType: string
+		lineageTag: f87a2fa5-02ad-4c63-9ad3-381e545b043c
+		summarizeBy: none
+		sourceColumn: CellPhone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		lineageTag: ff20fff1-1cf0-480f-887e-b6899afe349d
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailAddress
+		dataType: string
+		lineageTag: dab0eb01-58c0-4afc-8134-7c46184df2f7
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 13653435-2d3f-46c2-87fb-47d2969270a4
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: 3e33a97e-eb0c-4f77-bae4-e5b107b1b7c9
+			defaultHierarchy: LocalDateTable_748d0592-fe6e-4dbb-a15e-4044f6cc5605.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ec509e46-b8fd-4017-b351-f19f96cce902
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: ada6dbc8-c304-4938-b2a2-be91eae0a47d
+			defaultHierarchy: LocalDateTable_90db98d6-bb34-4ee5-b915-9b70cb49da10.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_Salesperson = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("atpc-dwh-db1.tpcwire.com", "ODIN-Production"),
+				    MIMIR_DIM_Salesperson = Source{[Schema="MIMIR",Item="DIM_Salesperson"]}[Data]
+				in
+				    MIMIR_DIM_Salesperson
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

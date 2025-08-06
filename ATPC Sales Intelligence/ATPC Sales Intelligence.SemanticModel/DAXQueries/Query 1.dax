@@ -1,0 +1,11 @@
+// Welcome to DAX query view! Learn more about DAX queries at https://aka.ms/dax-queries.
+// Right-click on tables, columns, or measures in the data pane to access quick queries, or ask Copilot for help writing DAX.
+
+// Select "Run" to try this sample DAX query.
+EVALUATE
+var __CurrentYrMonth = 202505
+--int(left(max(DIM_Date[YearMonth]),4)&right(max(DIM_Date[YearMonth]),2))
+Var DateTbbl = SUMMARIZE(all(DIM_Date[YearMonth]),DIM_Date[YearMonth],"RequestedQuote",sum(FACT_EnteredOrders[RequestedQuantity]),"@UpdYrMon",int(left(max(DIM_Date[YearMonth]),4)&right(max(DIM_Date[YearMonth]),2)))
+Var Filttbl = FILTER(DateTbbl,[@UpdYrMon]<=__CurrentYrMonth && [@UpdYrMon]>=__CurrentYrMonth-2)
+var result =TOCSV(Filttbl)
+Return Filttbl
