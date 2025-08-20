@@ -12,6 +12,7 @@ table DIM_PaymentTerms
 	column IsActive
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: a623ba5a-7247-4fe2-a408-3a5819e4820b
 		summarizeBy: none
 		sourceColumn: IsActive
@@ -89,6 +90,7 @@ table DIM_PaymentTerms
 	column IsSystemDefault
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 995a55aa-e61b-4070-9323-3174a235249c
 		summarizeBy: none
 		sourceColumn: IsSystemDefault

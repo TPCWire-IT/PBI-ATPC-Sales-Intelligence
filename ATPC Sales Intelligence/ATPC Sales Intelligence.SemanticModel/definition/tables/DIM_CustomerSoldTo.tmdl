@@ -12,6 +12,7 @@ table DIM_CustomerSoldTo
 	column IsActive
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 4f620c28-22c8-490d-8fee-4bf7819b18f8
 		summarizeBy: none
 		sourceColumn: IsActive
@@ -198,6 +199,7 @@ table DIM_CustomerSoldTo
 	column IsDistributor
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 866df136-676b-451c-852f-f9db35b7418a
 		summarizeBy: none
 		sourceColumn: IsDistributor
@@ -207,6 +209,7 @@ table DIM_CustomerSoldTo
 	column IsStrategic
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 315122d2-b9ab-4839-9bd3-7e1cfd3a23c8
 		summarizeBy: none
 		sourceColumn: IsStrategic
@@ -224,6 +227,14 @@ table DIM_CustomerSoldTo
 		lineageTag: 75281651-6996-43bf-bea9-e6c112912dfc
 		summarizeBy: none
 		sourceColumn: IndustryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column FAERegion
+		dataType: string
+		lineageTag: fc959ecf-ca66-4631-9425-50de5ae457e4
+		summarizeBy: none
+		sourceColumn: FAERegion
 
 		annotation SummarizationSetBy = Automatic
 

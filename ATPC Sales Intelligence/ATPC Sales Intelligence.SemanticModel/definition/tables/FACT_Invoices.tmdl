@@ -12,6 +12,7 @@ table FACT_Invoices
 	column IsRevenue
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: f6848bf7-54b3-461b-8705-bd394b5ac117
 		summarizeBy: none
 		sourceColumn: IsRevenue
@@ -417,6 +418,7 @@ table FACT_Invoices
 	column IsRevenueSamplesIC
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: eb6ba9ca-4b29-453a-b9ae-fc8b8091083f
 		summarizeBy: none
 		sourceColumn: IsRevenueSamplesIC
@@ -656,6 +658,24 @@ table FACT_Invoices
 		lineageTag: 0acb8688-340a-4f8b-9ba9-c9cefb69f7ac
 		summarizeBy: none
 		sourceColumn: IndustryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipQuantityNormalized
+		dataType: double
+		lineageTag: 4a036f80-78ab-4e87-b405-00b6e4c3cadf
+		summarizeBy: sum
+		sourceColumn: ShipQuantityNormalized
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ShipQuantityUOMNormalized
+		dataType: string
+		lineageTag: 9d8bc879-9401-4aa7-a455-9ba2c58402d2
+		summarizeBy: none
+		sourceColumn: ShipQuantityUOMNormalized
 
 		annotation SummarizationSetBy = Automatic
 

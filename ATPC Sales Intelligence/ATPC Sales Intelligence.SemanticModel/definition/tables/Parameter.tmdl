@@ -1,0 +1,58 @@
+table Parameter
+	lineageTag: 4a9616e0-d87f-4f6b-920f-c7dd101fe65b
+
+	column Parameter
+		lineageTag: e907327e-b9be-4e2f-bcea-b7a29521fec3
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: bf43f272-289f-4c1d-84e9-d0e92a0a0393
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: 3175348c-4f31-4059-a998-fc7aa955de34
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionsType
+		lineageTag: d527d037-3216-4c63-9956-cbe2cea85909
+		summarizeBy: none
+		sourceColumn: [Value4]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("Amount", NAMEOF('All Calculations'[SUM Orders]), 0,"Orders"),
+				    ("Volume", NAMEOF('All Calculations'[SUM RequestedQuantity]), 1,"Orders"),
+				    ("Amount", NAMEOF('All Calculations'[SUM NetExtendedSales]), 2,"Revenue"),
+				    ("Margin", NAMEOF('All Calculations'[SUM Profit]), 3,"Revenue"),
+				    ("Volume", NAMEOF('All Calculations'[SUM Ship Quantity Normalized]), 4,"Revenue")
+				}
+
+	annotation PBI_Id = 63ca15aabe8d4e7ca5cf26f13758a9b8
+

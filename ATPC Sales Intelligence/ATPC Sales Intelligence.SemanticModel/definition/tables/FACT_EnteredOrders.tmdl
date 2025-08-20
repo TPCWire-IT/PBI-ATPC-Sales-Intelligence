@@ -12,6 +12,7 @@ table FACT_EnteredOrders
 	column IsOrder
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 5d283d9f-0518-43b5-a668-7e274745a0a3
 		summarizeBy: none
 		sourceColumn: IsOrder
@@ -21,6 +22,7 @@ table FACT_EnteredOrders
 	column IsOrderSamplesIC
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 25e246ec-5458-4fcf-b167-ef4f5701b8a8
 		summarizeBy: none
 		sourceColumn: IsOrderSamplesIC
@@ -217,6 +219,7 @@ table FACT_EnteredOrders
 	column IsBlanketOrder
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 5467ca40-1c4a-4583-86ba-42fb3c6aad83
 		summarizeBy: none
 		sourceColumn: IsBlanketOrder
@@ -636,6 +639,7 @@ table FACT_EnteredOrders
 	column IsBacklog
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 270873ac-9105-4e72-8fa4-2e40bb013139
 		summarizeBy: none
 		sourceColumn: IsBacklog
@@ -729,6 +733,14 @@ table FACT_EnteredOrders
 		lineageTag: ccbfbc02-3907-4c67-8730-c25ede133069
 		summarizeBy: none
 		sourceColumn: IndustryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column EntryPerson
+		dataType: string
+		lineageTag: 164d0abe-ab2d-4909-a66c-940ef9001cfb
+		summarizeBy: none
+		sourceColumn: EntryPerson
 
 		annotation SummarizationSetBy = Automatic
 

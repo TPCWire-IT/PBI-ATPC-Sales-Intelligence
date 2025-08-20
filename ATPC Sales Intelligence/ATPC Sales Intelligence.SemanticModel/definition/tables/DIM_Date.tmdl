@@ -35,6 +35,7 @@ table DIM_Date
 	column IsLeapYear
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 8fb96f1c-2025-4e91-a1fa-48a0be8be83b
 		summarizeBy: none
 		sourceColumn: IsLeapYear
@@ -110,6 +111,7 @@ table DIM_Date
 	column IsWeekend
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: df309a1b-aecd-4028-89b7-d8f73536b6b2
 		summarizeBy: none
 		sourceColumn: IsWeekend
@@ -198,6 +200,7 @@ table DIM_Date
 	column IsHolidayUSA
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 44979b52-b9cf-4042-b316-e7c77cfafbf9
 		summarizeBy: none
 		sourceColumn: IsHolidayUSA
@@ -207,6 +210,7 @@ table DIM_Date
 	column IsHolidayCAN
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 2263f127-a425-4eed-a3bd-94dcf60cc570
 		summarizeBy: none
 		sourceColumn: IsHolidayCAN
@@ -216,6 +220,7 @@ table DIM_Date
 	column IsHolidayMEX
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: f5a278e6-dc10-4141-92bb-05cecbd78042
 		summarizeBy: none
 		sourceColumn: IsHolidayMEX
@@ -249,6 +254,7 @@ table DIM_Date
 	column IsWorkdayUSA
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 287b037b-4593-4876-a475-332a948e1b3d
 		summarizeBy: none
 		sourceColumn: IsWorkdayUSA
@@ -258,6 +264,7 @@ table DIM_Date
 	column IsWorkdayCAN
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 47e0e1bc-7aff-4aac-9cc1-5f5113d1b43b
 		summarizeBy: none
 		sourceColumn: IsWorkdayCAN
@@ -267,6 +274,7 @@ table DIM_Date
 	column IsWorkdayMEX
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 4a972636-fa2e-449f-911b-b212a8dce743
 		summarizeBy: none
 		sourceColumn: IsWorkdayMEX
@@ -280,8 +288,9 @@ table DIM_Date
 
 		annotation SummarizationSetBy = Automatic
 
-	column IsActual = DIM_Date[Date] < TODAY()
+	column IsActual = DIM_Date[Date] < TODAY() ||  today() = ENDOFMONTH(DIM_Date[Date])
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: bc66814f-1e0d-4bc7-8418-c939eb833ac5
 		summarizeBy: none
 
