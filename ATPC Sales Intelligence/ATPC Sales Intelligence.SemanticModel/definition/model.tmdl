@@ -10,7 +10,7 @@ annotation PBI_QueryOrder = ["DIM_CustomerSoldTo","DIM_Date","DIM_Part","FACT_Re
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.145.1602.0 (25.07)+10647c9fa319b5e39936cdb21328038c371d1fe4
+annotation PBIDesktopVersion = 2.146.705.0 (25.08)+b71502aff0a01340c88f384884ef42771068f115
 
 annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
 
@@ -58,6 +58,7 @@ ref table LocalDateTable_920ece97-f24f-4cac-9f6f-d5696355fe97
 ref table LocalDateTable_63d44e05-6fa0-405e-944b-1cf87c40d046
 ref table LocalDateTable_d4ce7bc4-9db7-4466-b566-785dcc9c5eb1
 ref table DIM_Industry
+ref table Parameter
 
 ref role Managers
 ref role 'Individual Contributors'

@@ -931,7 +931,7 @@ table 'All Calculations'
 		displayFolder: NetExtendedSales
 		lineageTag: c586ad68-07ff-4b42-8e14-292c0a263a49
 
-	measure 'Selector IsInLast12Months' =
+	measure IsInLast12Months =
 			
 			Var _maxYearMonth =  Maxx(ALLSELECTED(DIM_Date),[Date])
 			var currentMonth = max(DIM_Date[Date])
@@ -940,7 +940,18 @@ table 'All Calculations'
 			
 			Return _check
 		formatString: 0
+		displayFolder: Boolean
 		lineageTag: 7b6634a3-e35c-49c3-93e6-45446d5f6e8a
+
+	measure 'SUM RequestedQuantity' = COALESCE(sum(FACT_EnteredOrders[RequestedQuantity]),0)
+		lineageTag: 0ce6c33d-ff07-4bce-ba0e-6c6306bc13ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'SUM Ship Quantity Normalized' = COALESCE(sum(FACT_Invoices[ShipQuantityNormalized]),0)
+		lineageTag: 4db43ab9-5d8f-49c1-b962-e677eaa42a59
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Value
 		isHidden

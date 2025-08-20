@@ -12,6 +12,7 @@ table DIM_Part
 	column IsActive
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: 3e991295-2e74-48c3-a30e-e1904b53e7d1
 		summarizeBy: none
 		sourceColumn: IsActive
@@ -269,6 +270,7 @@ table DIM_Part
 	column IsCustom
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Boolean
 		lineageTag: d48c7e86-6baa-4957-8d02-015eeeef74a3
 		summarizeBy: none
 		sourceColumn: IsCustom
@@ -280,6 +282,14 @@ table DIM_Part
 		lineageTag: 64095591-d796-4fd9-b1a2-afeb3dd31271
 		summarizeBy: none
 		sourceColumn: ProductLine
+
+		annotation SummarizationSetBy = Automatic
+
+	column Planner
+		dataType: string
+		lineageTag: e6699b31-6504-4e77-b3fe-a2dbceb77af1
+		summarizeBy: none
+		sourceColumn: Planner
 
 		annotation SummarizationSetBy = Automatic
 
