@@ -288,7 +288,10 @@ table DIM_Date
 
 		annotation SummarizationSetBy = Automatic
 
-	column IsActual = DIM_Date[Date] < TODAY() ||  today() = ENDOFMONTH(DIM_Date[Date])
+	column IsActual = ```
+			DIM_Date[Date] < TODAY() 
+			-- ||  today() = ENDOFMONTH(DIM_Date[Date])
+			```
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: Boolean
 		lineageTag: bc66814f-1e0d-4bc7-8418-c939eb833ac5
